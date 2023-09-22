@@ -15,6 +15,10 @@ export type Holiday = {
   day: number;
 };
 
+export type HolidayWithYear = Holiday & {
+  year: number;
+};
+
 // 以下、2023/09/23 現在のデータ
 // 年によらず固定の祝日
 export const getFixedHoliday = (): Holiday[] => {
@@ -222,10 +226,25 @@ export const getFurikaeKyujitu = (year: number): Holiday[] => {
 
 // TODO: 国民の休日（祝日と祝日の間の平日。祝日が増えたときなどに実装）
 
-export const getHolidays = (year: number): Holiday[] => {
-  const fixedHolidays = getFixedHoliday();
-  const movingHolidays = getMovingHoliday(year);
-  const furikaeKyujitu = getFurikaeKyujitu(year);
+export const getHolidaysOfYear = (year: number): HolidayWithYear[] => {
+  const fixedHolidays = getFixedHoliday().map((holiday) => {
+    return {
+      ...holiday,
+      year,
+    };
+  });
+  const movingHolidays = getMovingHoliday(year).map((holiday) => {
+    return {
+      ...holiday,
+      year,
+    };
+  });
+  const furikaeKyujitu = getFurikaeKyujitu(year).map((holiday) => {
+    return {
+      ...holiday,
+      year,
+    };
+  });
   const holidays = fixedHolidays.concat(movingHolidays).concat(furikaeKyujitu);
   // sort by month and day
   const sortedHolidays = holidays.sort((a, b) => {
@@ -244,4 +263,15 @@ export const getHolidays = (year: number): Holiday[] => {
     return 0;
   });
   return sortedHolidays;
+};
+
+export const getHolidaysBetweenYears = (
+  startYear: number,
+  endYear: number
+): HolidayWithYear[] => {
+  let holidays: HolidayWithYear[] = [];
+  for (let year = startYear; year <= endYear; year++) {
+    holidays = holidays.concat(getHolidaysOfYear(year));
+  }
+  return holidays;
 };
