@@ -1,5 +1,17 @@
 # holiday-jp-since
 
+2022 年以降の日本の祝日を取得するライブラリ
+
+## Note
+
+軽量化のため、2022 年以降のデータのみサポートしています。
+
+## Usage
+
+TODO
+
+## Develop
+
 To install dependencies:
 
 ```bash
