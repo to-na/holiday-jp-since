@@ -1,0 +1,12 @@
+{
+  "name": "holiday-jp-since",
+  "version": "0.1.0",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
