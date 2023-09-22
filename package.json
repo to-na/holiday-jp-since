@@ -1,8 +1,13 @@
 {
   "name": "holiday-jp-since",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "description": "2022年以降の日本の祝日",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "build": "bun build ./index.ts --out-dir ./dist",
+    "test": "bun test"
+  },
   "devDependencies": {
     "bun-types": "latest"
   },
