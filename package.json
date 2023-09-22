@@ -1,6 +1,6 @@
 {
   "name": "holiday-jp-since",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "2022年以降の日本の祝日",
   "module": "index.ts",
   "type": "module",
