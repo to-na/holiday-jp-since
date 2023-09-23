@@ -21,7 +21,7 @@ const holidays2024To2099 = getHolidaysOfYear(2024, 2099);
 [{
   holidayType: HOLIDAY_TYPE.FIXED,
   name: "元日",
-  year: 2024
+  year: 2024,
   month: 1,
   day: １,
 }, ...]
