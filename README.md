@@ -12,7 +12,7 @@
 import { getHolidaysOfYear, getHolidaysBetweenYears } from "holiday-jp-since";
 
 const hoildays2024 = getHolidaysOfYear(2024);
-const holidays2024To2099 = getHolidaysOfYear(2024, 2099);
+const holidays2024To2099 = getHolidayBetweenYears(2024, 2099);
 ```
 
 返ってくる値は次のフォーマットです。
