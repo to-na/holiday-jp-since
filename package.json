@@ -1,6 +1,6 @@
 {
   "name": "holiday-jp-since",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "2022年以降の日本の祝日",
   "main": "build/holiday-jp-since.js",
   "types": "src/holiday-jp-since.d.ts",
@@ -18,6 +18,7 @@
   "license": "MIT",
   "files": [
     "build",
+    "index.d.ts",
     "README.md",
     "package.json"
   ]
