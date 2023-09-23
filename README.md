@@ -27,6 +27,15 @@ const holidays2024To2099 = getHolidayBetweenYears(2024, 2099);
 }, ...]
 ```
 
+特定の日付が祝日か判定することもできます。
+
+```ts
+import { isHoliday } from "holiday-jp-since";
+
+const is20240101Holiday = isHoliday(2024, 1, 1); // => true
+
+```
+
 ## Develop
 
 To install dependencies:
