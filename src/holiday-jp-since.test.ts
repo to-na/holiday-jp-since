@@ -1,5 +1,9 @@
 import { expect, test } from "bun:test";
-import { getHolidaysOfYear, getHolidaysBetweenYears } from "./holiday-jp-since";
+import {
+  getHolidaysOfYear,
+  getHolidaysBetweenYears,
+  isHoliday,
+} from "./holiday-jp-since";
 // from https://holidays-jp.github.io/api/v1/date.json
 
 const knownHolidays = {
@@ -106,5 +110,12 @@ test("kokumin-no-shukujitsu-from-2022-to-2024", () => {
     const dayZeroPadding = holiday.day.toString().padStart(2, "0");
     const dateStr = `${holiday.year}-${monthZeroPadding}-${dayZeroPadding}`;
     expect(Object.keys(allKnownHolidays)).toContain(dateStr);
+  }
+});
+
+test("isHoliday", () => {
+  const holidays = getHolidaysBetweenYears(2022, 2024);
+  for (const holiday of holidays) {
+    expect(isHoliday(holiday.year, holiday.month, holiday.day)).toBe(true);
   }
 });
