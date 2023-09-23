@@ -1,11 +1,12 @@
 {
   "name": "holiday-jp-since",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "description": "2022年以降の日本の祝日",
-  "module": "index.ts",
+  "main": "build/holiday-jp-since.js",
+  "types": "src/holiday-jp-since.d.ts",
   "type": "module",
   "scripts": {
-    "build": "bun build ./index.ts --out-dir ./dist",
+    "build": "bun build ./src/holiday-jp-since.ts --outdir ./build --minify",
     "test": "bun test"
   },
   "devDependencies": {
@@ -13,5 +14,12 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
-  }
+  },
+  "license": "MIT",
+  "files": [
+    "build",
+    "index.d.ts",
+    "README.md",
+    "package.json"
+  ]
 }
