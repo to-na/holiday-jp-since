@@ -275,3 +275,15 @@ export const getHolidaysBetweenYears = (
   }
   return holidays;
 };
+
+export const isHoliday = (
+  year: number,
+  month: number,
+  day: number
+): boolean => {
+  const holidays = getHolidaysOfYear(year);
+  const holiday = holidays.find((holiday) => {
+    return holiday.month === month && holiday.day === day;
+  });
+  return holiday !== undefined;
+};
